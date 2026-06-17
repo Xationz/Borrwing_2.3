@@ -1,0 +1,85 @@
+/**
+ * Login Page
+ */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--color-bg);
+}
+
+.login-page__bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.12), transparent),
+    var(--color-bg);
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.login-card__header {
+  padding: var(--space-8) var(--space-6) var(--space-6);
+  text-align: center;
+}
+
+.login-card__logo {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-4);
+  background: var(--color-primary-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.login-card__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.login-card__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.login-card__body {
+  padding: 0 var(--space-6) var(--space-8);
+}
+
+.login-error {
+  padding: var(--space-3);
+  background: var(--color-danger-bg);
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-sm);
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+  text-align: center;
+  margin-bottom: var(--space-5);
+}
+
+.login-card__footer {
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
