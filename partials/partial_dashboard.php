@@ -81,6 +81,24 @@ if ($role === 'admin') {
 }
 
 render_breadcrumb([['label' => 'Dashboard', 'page' => 'dashboard']]);
+
+if ($role === 'user') {
+    // User Dashboard: Add borrowing form card section above KPIs
+    ?>
+    <div class="app-card u-mb-6" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; border: none;">
+        <div class="app-card__body" style="display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+            <div>
+                <h2 class="app-card__title" style="color: white; margin-bottom: 8px;"><i class="bi bi-clipboard-plus"></i> แบบฟอร์มขอยืมครุภัณฑ์</h2>
+                <p style="margin: 0; opacity: 0.9;">ดำเนินการขอยืมครุภัณฑ์ได้อย่างรวดเร็วและง่ายดาย</p>
+            </div>
+            <a href="?page=borrow" class="btn btn--lg spa-link" data-page="borrow" style="background: white; color: #10B981; font-weight: 700; border: none;">
+                <i class="bi bi-plus-lg"></i> ขอยืมครุภัณฑ์
+            </a>
+        </div>
+    </div>
+    <?php
+}
+
 render_page_header(
     'Dashboard',
     'ยินดีต้อนรับ, ' . $username . ' — ภาพรวมระบบยืมครุภัณฑ์'

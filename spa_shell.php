@@ -10,8 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 $role     = $_SESSION['role'] ?? 'user';
 $username = $_SESSION['username'] ?? '';
 
-$allowed_admin = ['dashboard','equipment','calendar','return_approval','borrowing_dashboard','settings','admins','categorie','equipment_browse','borrow','borrow_history'];
-$allowed_user  = ['dashboard','equipment_browse','borrow','borrow_history'];
+$allowed_admin = ['dashboard','equipment','calendar','return_approval','borrowing_dashboard','settings','admins','categorie'];
+$allowed_user  = ['dashboard','borrow_history'];
 
 $page = $_GET['page'] ?? 'dashboard';
 
@@ -31,16 +31,6 @@ foreach ($menu as $item) {
 }
 if ($role === 'admin') {
     $menuFiltered = $navItems['admin'];
-    // Keep both history and requests pointing to return_approval but different labels - use unique keys
-    $menuFiltered = [
-        ['page' => 'dashboard', 'label' => 'Dashboard', 'icon' => 'bi-grid-1x2'],
-        ['page' => 'equipment', 'label' => 'ครุภัณฑ์', 'icon' => 'bi-laptop'],
-        ['page' => 'calendar', 'label' => 'ขอยืมครุภัณฑ์', 'icon' => 'bi-calendar3'],
-        ['page' => 'return_approval', 'label' => 'ประวัติการยืม', 'icon' => 'bi-clock-history'],
-        ['page' => 'return_approval', 'label' => 'จัดการคำขอ', 'icon' => 'bi-patch-check'],
-        ['page' => 'borrowing_dashboard', 'label' => 'รายงาน', 'icon' => 'bi-bar-chart-line'],
-        ['page' => 'settings', 'label' => 'ตั้งค่า', 'icon' => 'bi-gear'],
-    ];
 }
 
 $initials = mb_strtoupper(mb_substr($username, 0, 1));
